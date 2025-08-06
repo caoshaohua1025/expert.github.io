@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>安装教程 & 专属福利</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial;margin:0;padding:0;background:#f5f5f5;text-align:center}
+.header{background:#ff6a00;color:#fff;padding:20px 0;font-size:22px;font-weight:bold}
+.video{padding:20px}
+.video iframe{width:100%;height:200px;border-radius:10px}
+.gift{margin:0 5%;background:#fff;border-radius:10px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.gift h3{margin:0 0 10px;color:#333}
+.gift p{margin:0 0 15px;font-size:14px;color:#666}
+form{display:flex;flex-direction:column}
+input[type=email]{border:1px solid #ddd;border-radius:4px;padding:10px;margin-bottom:10px;font-size:16px}
+button{background:#ff6a00;color:#fff;border:none;padding:12px;border-radius:4px;font-size:16px}
+button:active{opacity:.8}
+.footer{font-size:12px;color:#999;padding:10px}
+</style>
+</head>
+<body>
+<div class="header">30秒安装教程</div>
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/1123456789" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="gift">
+  <h3>免费领取「延长质保6个月」</h3>
+  <p>留下邮箱，2分钟内发送激活码，绝无广告骚扰。</p>
+  <form action="https://api.yourdomain.com/collect" method="post">
+    <input type="email" name="email" placeholder="输入常用邮箱" required>
+    <input type="hidden" name="source" value="package_insert">
+    <button type="submit">立即领取</button>
+  </form>
+</div>
+<div class="footer">© 2025 YourBrand 保留所有权利</div>
+</body>
+</html>
