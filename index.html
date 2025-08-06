@@ -70,13 +70,12 @@ form.addEventListener('submit', function (e) {
       form.reset();
       isSubmitting = false;
     } else {
-      // 如果邮箱已存在或其它错误
-      return res.json().then(err => Promise.reject(err));
+      alert('订阅失败,请确认邮箱后重试');
     }
   })
   .catch(err => {
-    console.error(err);
-    msgEl.textContent = '订阅失败：' + (err.message || '未知错误');
+    alert('订阅失败：' + (err.message || '未知错误'));
+    msgEl.textContent = 'GET IT NOW';
     isSubmitting = false;
   });
 });
