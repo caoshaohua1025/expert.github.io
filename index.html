@@ -84,58 +84,14 @@
     <div class="gift">
       <h3>Get it for Free「Extend Warranty for 6 Months」</h3>
       <p>( Leave ur Email, Send Activation Code within 2 Mins, No Advertising Harass)</p>
-      <form id="subForm">
+      <form action="http://10.1.23.47:3000/getEmail" method="post">
         <input type="email" name="email" placeholder="Enter your Email" required />
         <input type="hidden" name="source" value="package_insert" />
-        <button type="submit" id="submitBtn">GET IT NOW</button>
+        <button type="submit">GET IT NOW</button>
       </form>
     </div>
     <div class="footer">© 2025 YourBrand All Rights Reserved</div>
+
+    <script></script>
   </body>
-  <script>
-    const API_KEY =
-      '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'
-    const LIST_ID = '#2' // 换成你在后台看到的 listId
-
-    const form = document.getElementById('subForm')
-    const msgEl = document.getElementById('submitBtn')
-    let isSubmitting = false
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault() // 阻止表单默认提交
-      const email = form.email.value.trim()
-      if (!email) return
-      if (isSubmitting) return
-      isSubmitting = true
-      msgEl.textContent = 'Updating...'
-
-      fetch('https://api.sendinblue.com/v3/contacts', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          'api-key': API_KEY,
-        },
-        body: JSON.stringify({
-          email: email,
-          listIds: [LIST_ID],
-          updateEnabled: true,
-        }),
-      })
-        .then((res) => {
-          if (res.ok) {
-            msgEl.textContent = 'GET IT NOW'
-            form.reset()
-            isSubmitting = false
-          } else {
-            alert('订阅失败,请确认邮箱后重试' + res)
-          }
-        })
-        .catch((err) => {
-          alert('订阅失败：' + (err.message || '未知错误'))
-          msgEl.textContent = 'GET IT NOW'
-          isSubmitting = false
-        })
-    })
-  </script>
 </html>
